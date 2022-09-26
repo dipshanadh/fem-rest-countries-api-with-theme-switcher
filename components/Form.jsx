@@ -1,12 +1,12 @@
 const Form = () => {
 	return (
 		<form className="px-4 text-lg my-16">
-			<div className="max-w-6xl mx-auto flex justify-between items-center">
+			<div className="max-w-6xl mx-auto flex flex-col gap-8 md:flex-row justify-between md:items-center">
 				<div className="relative w-full">
 					<input
 						type="text"
 						placeholder="Search for a country..."
-						className="bg-dark-dark-blue rounded-md appearance-none py-4 outline-none text-base pl-3 pl-[75px] shadow-md w-1/2"
+						className="bg-dark-dark-blue rounded-md appearance-none py-4 outline-none text-base pl-3 pl-[75px] shadow-md w-full md:w-1/2"
 					/>
 
 					<span className="absolute top-0 left-0 w-20 h-full flex items-center justify-center">
@@ -25,7 +25,7 @@ const Form = () => {
 					</span>
 				</div>
 
-				<div className="relative">
+				<div className="relative w-fit">
 					<select
 						className="bg-dark-dark-blue rounded-md appearance-none py-4 outline-none pl-5 pr-20 shadow-md"
 						defaultValue="none"

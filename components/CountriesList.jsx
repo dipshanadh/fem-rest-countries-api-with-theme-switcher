@@ -1,7 +1,7 @@
 const CountriesList = ({ countries }) => {
 	return (
 		<section className="px-8 my-16">
-			<div className="max-w-6xl mx-auto grid grid-cols-4 gap-16">
+			<div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
 				{countries.map(country => {
 					const { flags, name, population, region, capital } = country
 
