@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const CountriesList = ({ countries }) => {
 	return (
-		<section className="px-8 my-16">
+		<section className="px-8 pb-8">
 			<div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
 				{countries.map(country => {
 					const { flags, name, population, region, capital } = country

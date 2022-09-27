@@ -1,4 +1,4 @@
-const Form = ({ search, setSearch }) => {
+const Form = ({ search, setSearch, region, setRegion }) => {
 	return (
 		<form className="px-4 text-lg my-16">
 			<div className="container mx-auto flex flex-col gap-8 md:flex-row justify-between md:items-center">
@@ -30,16 +30,17 @@ const Form = ({ search, setSearch }) => {
 				<div className="relative w-fit">
 					<select
 						className="bg-White dark:bg-dark-blue rounded-md appearance-none py-4 outline-none pl-5 pr-20 shadow-md"
-						defaultValue="none"
+						value={region}
+						onChange={e => setRegion(e.target.value)}
 					>
 						<option value="none" disabled>
 							Filter By Region
 						</option>
-						<option>Africa</option>
-						<option>America</option>
-						<option>Asia</option>
-						<option>Europe</option>
-						<option>Oceania</option>
+						<option value="Africa">Africa</option>
+						<option value="Americas">Americas</option>
+						<option value="Asia">Asia</option>
+						<option value="Europe">Europe</option>
+						<option value="Oceania">Oceania</option>
 					</select>
 					<span className="absolute right-0 top-0 h-full w-16 text-center dark:text-White pointer-events-none flex items-center justify-center">
 						<svg
