@@ -28,7 +28,7 @@ const Header = () => {
 						/>
 					</svg>
 
-					<p className="sm:text-lg">Dark mode</p>
+					<span className="sm:text-lg">Dark mode</span>
 				</button>
 			</div>
 		</header>

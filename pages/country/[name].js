@@ -50,7 +50,7 @@ export default function Country({ country }) {
 							{name.common}
 						</h2>
 
-						<ul role="list" className="grid md:grid-cols-2 gap-2">
+						<ul className="grid md:grid-cols-2 gap-2">
 							<li>
 								<span className="font-medium">
 									Native name:{" "}
