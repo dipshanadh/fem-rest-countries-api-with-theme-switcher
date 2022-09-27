@@ -3,29 +3,25 @@ import { useEffect, useState } from "react"
 import CountriesList from "../components/CountriesList"
 import Form from "../components/Form"
 import fetchData from "../util/fetchData"
+import searchCountry from "../util/search"
 
-export default function Home({ countries }) {
-	const [allCountries, setAllCountries] = useState(countries)
-	const [filteredCountries, setFilteredCountries] = useState(countries)
+export default function Home({ initailCountries }) {
+	const [allCountries, setAllCountries] = useState(initailCountries)
+	const [filteredCountries, setFilteredCountries] = useState(initailCountries)
 	const [search, setSearch] = useState("")
 	const [region, setRegion] = useState("none")
 
 	useEffect(() => {
-		if (search)
-			setFilteredCountries(
-				allCountries.filter(country =>
-					country.name.common
-						.toLowerCase()
-						.includes(search.toLowerCase())
-				)
-			)
-		else setFilteredCountries(allCountries)
+		setFilteredCountries(searchCountry(allCountries, search))
 	}, [search])
 
 	useEffect(() => {
 		if (region !== "none")
 			fetchData(`https://restcountries.com/v3.1/region/${region}`).then(
-				countries => setAllCountries(countries)
+				countries => {
+					setFilteredCountries(searchCountry(countries, search))
+					setAllCountries(countries)
+				}
 			)
 	}, [region])
 
@@ -43,11 +39,11 @@ export default function Home({ countries }) {
 }
 
 export const getStaticProps = async () => {
-	const countries = await fetchData(
+	const initailCountries = await fetchData(
 		"https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital"
 	)
 
 	return {
-		props: { countries },
+		props: { initailCountries },
 	}
 }

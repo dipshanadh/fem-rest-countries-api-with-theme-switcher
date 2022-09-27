@@ -42,7 +42,7 @@ export default function Country({ country }) {
 					<img
 						src={flags.svg}
 						alt={name.common}
-						className="max-h-[60vh] shadow-md rounded-md"
+						className=" aspect-video w-full shadow-md"
 					/>
 
 					<div>
@@ -101,7 +101,7 @@ export default function Country({ country }) {
 						</ul>
 
 						{borders && (
-							<div className="mt-8 md:flex gap-4 items-center">
+							<div className="mt-8 md:flex gap-4 flex-wrap">
 								<h3 className="font-medium text-lg mb-8 md:mb-0">
 									Border countries:
 								</h3>
