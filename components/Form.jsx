@@ -1,7 +1,7 @@
 const Form = ({ search, setSearch, region, setRegion }) => {
 	return (
 		<form className="px-4 text-lg my-16">
-			<div className="container mx-auto flex flex-col gap-8 md:flex-row justify-between md:items-center">
+			<div className="container mx-auto flex flex-col gap-4 md:flex-row justify-between md:items-center">
 				<div className="relative w-full">
 					<input
 						type="text"
