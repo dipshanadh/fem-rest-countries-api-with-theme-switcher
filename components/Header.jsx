@@ -1,9 +1,11 @@
+import Link from "next/link"
+
 const Header = () => {
 	return (
 		<header className="bg-dark-dark-blue p-4 shadow-md">
 			<div className="container mx-auto flex items-center">
 				<h1 className="text-xl sm:text-2xl md:text-3xl font-semibold mr-auto">
-					Where in the world ?
+					<Link href="/">Where in the world ?</Link>
 				</h1>
 
 				<svg

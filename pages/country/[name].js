@@ -14,8 +14,6 @@ export default function Country({ country }) {
 		borders,
 	} = country
 
-	console.log(country)
-
 	return (
 		<section className="px-8">
 			<div className="container mx-auto">
@@ -124,7 +122,7 @@ export default function Country({ country }) {
 	)
 }
 
-export const getStaticProps = async context => {
+export const getServerSideProps = async context => {
 	const res = await fetch(`
 		https://restcountries.com/v3.1/name/${context.params.name}
 	`)
@@ -134,18 +132,5 @@ export const getStaticProps = async context => {
 		props: {
 			country,
 		},
-	}
-}
-
-export const getStaticPaths = async () => {
-	const res = await fetch("https://restcountries.com/v3.1/all")
-	const countries = await res.json()
-
-	const names = countries.map(country => country.name.common),
-		paths = names.map(name => ({ params: { name } }))
-
-	return {
-		paths,
-		fallback: false,
 	}
 }
