@@ -5,7 +5,8 @@ const CountriesList = ({ countries }) => {
 		<section className="px-4 pb-8">
 			<div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
 				{countries.map(country => {
-					const { flags, name, population, region, capital } = country
+					const { flags, name, population, region, capital, area } =
+						country
 
 					return (
 						<div
@@ -31,21 +32,32 @@ const CountriesList = ({ countries }) => {
 								<ul>
 									<li>
 										<span className="font-medium">
+											Capital:{" "}
+										</span>
+										{capital}
+									</li>
+									<li>
+										<span className="font-medium">
 											Population:{" "}
 										</span>
-										{population}
+										{new Intl.NumberFormat("en-us").format(
+											population
+										)}
+									</li>
+									<li>
+										<span className="font-medium">
+											Area:{" "}
+										</span>
+										{new Intl.NumberFormat("en-us").format(
+											area
+										)}{" "}
+										sq. km
 									</li>
 									<li>
 										<span className="font-medium">
 											Region:{" "}
 										</span>
 										{region}
-									</li>
-									<li>
-										<span className="font-medium">
-											Capital:{" "}
-										</span>
-										{capital}
 									</li>
 								</ul>
 							</div>

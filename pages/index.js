@@ -40,7 +40,7 @@ export default function Home({ initailCountries }) {
 
 export const getStaticProps = async () => {
 	const initailCountries = await fetchData(
-		"https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital"
+		"https://restcountries.com/v3.1/all"
 	)
 
 	return {

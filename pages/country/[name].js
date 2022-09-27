@@ -12,6 +12,8 @@ export default function Country({ country }) {
 		subregion,
 		languages,
 		borders,
+		area,
+		landlocked,
 	} = country
 
 	return (
@@ -42,7 +44,7 @@ export default function Country({ country }) {
 					<img
 						src={flags.svg}
 						alt={name.common}
-						className=" aspect-video w-full shadow-md"
+						className="w-full shadow-md"
 					/>
 
 					<div>
@@ -61,16 +63,34 @@ export default function Country({ country }) {
 								{}
 							</li>
 							<li>
-								<span className="font-medium">
-									Top level domain:{" "}
-								</span>
-								{tld.join(", ")}
+								<span className="font-medium">Capital: </span>
+								{capital}
+							</li>
+							<li>
+								<span className="font-medium">Region: </span>
+								{region}
 							</li>
 							<li>
 								<span className="font-medium">
-									Population:{" "}
+									Sub Region:{" "}
 								</span>
-								{population}
+								{subregion}
+							</li>
+							<li>
+								<span className="font-medium">Area: </span>
+								{new Intl.NumberFormat("en-us").format(
+									area
+								)}{" "}
+								sq. km
+							</li>
+
+							<li>
+								<span className="font-medium">
+									Population:{" "}
+								</span>{" "}
+								{new Intl.NumberFormat("en-us").format(
+									population
+								)}
 							</li>
 							<li>
 								<span className="font-medium">
@@ -81,22 +101,22 @@ export default function Country({ country }) {
 									.join(", ")}
 							</li>
 							<li>
-								<span className="font-medium">Region: </span>
-								{region}
-							</li>
-							<li>
 								<span className="font-medium">Languages: </span>
 								{Object.values(languages).join(", ")}
 							</li>
 							<li>
 								<span className="font-medium">
-									Sub Region:{" "}
+									Top level domain:{" "}
 								</span>
-								{subregion}
+								{tld.join(", ")}
 							</li>
 							<li>
-								<span className="font-medium">Capital: </span>
-								{capital}
+								<span className="font-medium">
+									Landlocked:{" "}
+								</span>
+								<span className="capitalize">
+									{landlocked.toString()}
+								</span>
 							</li>
 						</ul>
 
