@@ -15,8 +15,8 @@ export default function Country({ country }) {
 	} = country
 
 	return (
-		<section className="px-8">
-			<div className="container mx-auto">
+		<section className="px-4">
+			<div className="container mx-auto pb-8">
 				<Link href="/">
 					<button
 						type="button"
@@ -38,7 +38,7 @@ export default function Country({ country }) {
 					</button>
 				</Link>
 
-				<div className="grid grid-cols-2 gap-16 items-center">
+				<div className="grid md:grid-cols-2 gap-16 items-center">
 					<img
 						src={flags.svg}
 						alt={name.common}
@@ -50,7 +50,7 @@ export default function Country({ country }) {
 							{name.common}
 						</h2>
 
-						<ul role="list" className="grid grid-cols-2 gap-2">
+						<ul role="list" className="grid md:grid-cols-2 gap-2">
 							<li>
 								<span className="font-medium">
 									Native name:{" "}
@@ -101,18 +101,20 @@ export default function Country({ country }) {
 						</ul>
 
 						{borders && (
-							<div className="mt-8 flex gap-4 flex-wrap items-center">
-								<h3 className="font-medium text-lg">
+							<div className="mt-8 md:flex gap-4 items-center">
+								<h3 className="font-medium text-lg mb-8 md:mb-0">
 									Border countries:
 								</h3>
-								{borders.map(country => (
-									<div
-										className="py-1.5 px-4 bg-White dark:bg-dark-blue rounded-md shadow-md"
-										key={country}
-									>
-										{country}
-									</div>
-								))}
+								<div className="flex gap-4 flex-wrap">
+									{borders.map(country => (
+										<div
+											className="py-1.5 px-4 bg-White dark:bg-dark-blue rounded-md shadow-md"
+											key={country}
+										>
+											{country}
+										</div>
+									))}
+								</div>
 							</div>
 						)}
 					</div>

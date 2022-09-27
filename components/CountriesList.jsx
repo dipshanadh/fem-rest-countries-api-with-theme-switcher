@@ -15,7 +15,7 @@ const CountriesList = ({ countries }) => {
 							<img
 								src={flags.png}
 								alt={name.common}
-								className="rounded-t-md aspect-video"
+								className="rounded-t-md aspect-video w-full"
 							/>
 
 							<div className="p-5">

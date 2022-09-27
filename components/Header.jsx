@@ -9,6 +9,7 @@ const Header = () => {
 				</h1>
 
 				<button
+					type="button"
 					className="flex gap-4 items-center"
 					onClick={() => document.body.classList.toggle("dark")}
 				>
@@ -27,7 +28,7 @@ const Header = () => {
 						/>
 					</svg>
 
-					<p className="text-lg">Dark mode</p>
+					<p className="sm:text-lg">Dark mode</p>
 				</button>
 			</div>
 		</header>
