@@ -30,7 +30,8 @@ const Form = ({ search, setSearch, region, setRegion }) => {
 				<div className="relative w-fit">
 					<select
 						className="bg-White dark:bg-dark-blue rounded-md appearance-none py-4 outline-none pl-5 pr-20 shadow-md"
-						name="region"
+						title="region"
+						aria-label="region"
 						value={region}
 						onChange={e => setRegion(e.target.value)}
 					>

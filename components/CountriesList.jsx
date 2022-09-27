@@ -28,7 +28,7 @@ const CountriesList = ({ countries }) => {
 									</h2>
 								</Link>
 
-								<ul role="list">
+								<ul>
 									<li>
 										<span className="font-medium">
 											Population:{" "}
