@@ -9,7 +9,7 @@ const CountriesList = ({ countries }) => {
 
 					return (
 						<div
-							className="bg-dark-dark-blue rounded-md"
+							className="bg-White dark:bg-dark-blue rounded-md shadow-md"
 							key={name.common}
 						>
 							<img
@@ -23,7 +23,7 @@ const CountriesList = ({ countries }) => {
 									href="country/[name]"
 									as={"/country/" + name.common}
 								>
-									<h2 className="font-semibold text-xl mb-4 hover:underline cursor-pointer">
+									<h2 className="font-bold text-xl mb-4 hover:underline cursor-pointer">
 										{name.common}
 									</h2>
 								</Link>

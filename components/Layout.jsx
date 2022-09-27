@@ -4,7 +4,7 @@ import Header from "./Header"
 
 const Layout = ({ children }) => {
 	return (
-		<>
+		<main className="bg-very-light-gray text-very-dark-blue-light dark:bg-very-dark-blue-dark dark:text-White min-h-screen">
 			<Head>
 				<title>
 					Frontend Mentor | REST Countries API with color theme
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
 			<Header />
 			{children}
-		</>
+		</main>
 	)
 }
 

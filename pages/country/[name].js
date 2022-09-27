@@ -20,7 +20,7 @@ export default function Country({ country }) {
 				<Link href="/">
 					<button
 						type="button"
-						className="py-2 px-8 my-12 bg-dark-dark-blue rounded-md shadow-md flex items-center gap-2.5"
+						className="py-2 px-8 my-12 bg-White dark:bg-dark-blue rounded-md shadow-md flex items-center gap-2.5"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -38,11 +38,11 @@ export default function Country({ country }) {
 					</button>
 				</Link>
 
-				<div className="grid grid-cols-2 gap-16">
+				<div className="grid grid-cols-2 gap-16 items-center">
 					<img
 						src={flags.svg}
 						alt={name.common}
-						className="max-h-[60vh]"
+						className="max-h-[60vh] shadow-md rounded-md"
 					/>
 
 					<div>
@@ -107,7 +107,7 @@ export default function Country({ country }) {
 								</h3>
 								{borders.map(country => (
 									<div
-										className="py-1.5 px-4 bg-dark-dark-blue rounded-md shadow-md"
+										className="py-1.5 px-4 bg-White dark:bg-dark-blue rounded-md shadow-md"
 										key={country}
 									>
 										{country}
@@ -124,7 +124,7 @@ export default function Country({ country }) {
 
 export const getServerSideProps = async context => {
 	const res = await fetch(`
-		https://restcountries.com/v3.1/name/${context.params.name}
+		https://restcountries.com/v3.1/name/${context.params.name}?fullText=true
 	`)
 	const [country] = await res.json()
 

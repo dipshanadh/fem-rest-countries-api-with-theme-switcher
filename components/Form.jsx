@@ -6,7 +6,7 @@ const Form = ({ search, setSearch }) => {
 					<input
 						type="text"
 						placeholder="Search for a country..."
-						className="bg-dark-dark-blue rounded-md appearance-none py-4 outline-none text-base pl-3 pl-[75px] shadow-md w-full md:w-1/2"
+						className="bg-White dark:bg-dark-blue rounded-md appearance-none py-4 outline-none text-base pl-3 pl-[75px] shadow-md w-full md:w-1/2"
 						value={search}
 						onChange={e => setSearch(e.target.value)}
 					/>
@@ -15,7 +15,7 @@ const Form = ({ search, setSearch }) => {
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
-							fill="white"
+							fill="currentColor"
 							className="w-6 h-6"
 						>
 							<path
@@ -29,7 +29,7 @@ const Form = ({ search, setSearch }) => {
 
 				<div className="relative w-fit">
 					<select
-						className="bg-dark-dark-blue rounded-md appearance-none py-4 outline-none pl-5 pr-20 shadow-md"
+						className="bg-White dark:bg-dark-blue rounded-md appearance-none py-4 outline-none pl-5 pr-20 shadow-md"
 						defaultValue="none"
 					>
 						<option value="none" disabled>
@@ -41,11 +41,11 @@ const Form = ({ search, setSearch }) => {
 						<option>Europe</option>
 						<option>Oceania</option>
 					</select>
-					<span className="absolute right-0 top-0 h-full w-16 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+					<span className="absolute right-0 top-0 h-full w-16 text-center dark:text-White pointer-events-none flex items-center justify-center">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
-							fill="white"
+							fill="currentColor"
 							className="w-6 h-6"
 						>
 							<path
