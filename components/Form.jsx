@@ -1,4 +1,4 @@
-const Form = () => {
+const Form = ({ search, setSearch }) => {
 	return (
 		<form className="px-4 text-lg my-16">
 			<div className="container mx-auto flex flex-col gap-8 md:flex-row justify-between md:items-center">
@@ -7,6 +7,8 @@ const Form = () => {
 						type="text"
 						placeholder="Search for a country..."
 						className="bg-dark-dark-blue rounded-md appearance-none py-4 outline-none text-base pl-3 pl-[75px] shadow-md w-full md:w-1/2"
+						value={search}
+						onChange={e => setSearch(e.target.value)}
 					/>
 
 					<span className="absolute top-0 left-0 w-20 h-full flex items-center justify-center">
